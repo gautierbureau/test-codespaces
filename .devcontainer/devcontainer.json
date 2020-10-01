@@ -19,7 +19,24 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "gcc -v",
+	"postCreateCommand": [ "echo '#!/bin/bash' > myEnvDynawo.sh", "echo 'export DYNAWO_HOME=$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)' > myEnvDynawo.sh"],
+
+  // echo '#!/bin/bash' > myEnvDynawo.sh
+  // echo 'export DYNAWO_HOME=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)' > myEnvDynawo.sh
+  // echo > myEnvDynawo.sh
+  // echo 'export DYNAWO_SRC_OPENMODELICA=$DYNAWO_HOME/OpenModelica/Source' > myEnvDynawo.sh
+  // echo 'export DYNAWO_INSTALL_OPENMODELICA=$DYNAWO_HOME/OpenModelica/Install' > myEnvDynawo.sh
+  // echo > myEnvDynawo.sh
+  // echo 'export DYNAWO_LOCALE=en_GB' > myEnvDynawo.sh
+  // echo 'export DYNAWO_RESULTS_SHOW=true' > myEnvDynawo.sh
+  // echo 'export DYNAWO_BROWSER=firefox' > myEnvDynawo.sh
+  // echo > myEnvDynawo.sh' > myEnvDynawo.sh
+  // echo 'export DYNAWO_NB_PROCESSORS_USED=1' > myEnvDynawo.sh
+  // echo > myEnvDynawo.sh
+  // echo 'export DYNAWO_BUILD_TYPE=Release' > myEnvDynawo.sh
+  // echo 'export DYNAWO_CXX11_ENABLED=YES' > myEnvDynawo.sh
+  // echo > myEnvDynawo.sh
+  // echo '$DYNAWO_HOME/util/envDynawo.sh $@' > myEnvDynawo.sh
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
